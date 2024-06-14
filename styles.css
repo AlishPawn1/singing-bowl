@@ -589,7 +589,7 @@ header .logo a{
     font-family: var(--secondary-fonts);
 }
 .popular-bowl-list{
-    padding-top: 50px;
+    padding-top: 20px;
     margin-right: -15px;
     margin-left: -15px;
 }
