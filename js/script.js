@@ -74,7 +74,95 @@ jQuery(function ($) {
           $(this).toggleClass('active');
           $(this).parent().siblings().find('ul').removeClass('active').hide();
         }
-      });
+    });
+
+    // zoom image
+
+    const zoom = $('.single-main-slide .image');
+    const s = 2;
+
+    zoom.on('mousemove', function(e) {
+        const x = e.pageX - $(this).offset().left - zoom.width() / 2;
+        const y = e.pageY - $(this).offset().top- zoom.height() / 2;
+
+        var xc = - x / s;
+        var yc = - y / s;
+
+        $('.single-main-slide .image img').css('transform', 'translate(' + xc + 'px, ' + yc + 'px) scale(1.5)');
+
+    });
+
+    zoom.on('mouseleave', function () {
+        $('.single-main-slide .image img').css('transform', 'translate(0, 0) scale(1)');
+    });
+
+
+    // fancy box 
+
+    // $('[data-fancybox="gallery"]').fancybox({
+    //     buttons : [
+    //         'slideShow',
+    //         'share',
+    //         'zoom',
+    //         'fullScreen',
+    //         'download',
+    //         'thumbs',
+    //         'close'
+    //     ]
+    // });
+
+
+    // quantity plus minus 
+    var x = parseInt($(".quantity-product").val());
+
+    $(".plus").click(function () {
+        $(".quantity-product").val(++x);
+        $('#updateButton').prop('disabled', false); 
+    });
+  
+    $(".minus").click(function () {
+        if (x > 1) {
+            $(".quantity-product").val(--x);
+            $('#updateButton').prop('disabled', false); 
+        } else {
+            x = 1;
+        }
+    });
+    $(document).ready(function () {
+        // Extract the price, ensuring to remove the dollar sign and any other non-numeric characters
+        const productPrice = parseFloat($('#product-price').text());
+        const $quantityInput = $('#quantity-product');
+        const $subtotalElement = $('#subtotal');
+        
+        // Ensure quantity starts as an integer
+        let quantity = parseInt($quantityInput.val());
+    
+        // Function to update subtotal
+        function updateSubtotal() {
+            const subtotal = (productPrice * quantity).toFixed(2);
+            $subtotalElement.text(subtotal);
+        }
+    
+        // Event listeners for minus and plus buttons
+        $('.product-btn.minus').click(function () {
+            if (quantity > 1) {
+                quantity -= 1;
+                $quantityInput.val(quantity);
+                updateSubtotal();
+            }
+        });
+    
+        $('.product-btn.plus').click(function () {
+            quantity += 1;
+            $quantityInput.val(quantity);
+            updateSubtotal();
+        });
+    
+        // Initial subtotal calculation
+        updateSubtotal();
+    });
+    
+    
 });
 
 
@@ -98,4 +186,37 @@ if(document.querySelector('.customer-slide')){
             },
         }
     }).mount();
+}
+
+if(document.querySelector('.product-main-slide')){
+    var main = new Splide( '.product-main-slide', {
+        type       : 'fade',
+        pagination : false,
+        arrows     : false,
+        cover      : true,
+    } );
+    
+    var thumbnails = new Splide( '.product-thumbnail-slide', {
+    rewind          : true,
+    fixedWidth      : 104,
+    fixedHeight     : 100,
+    arrows     : false,
+    isNavigation    : true,
+    pagination      : false,
+    cover           : true,
+    dragMinThreshold: {
+        mouse: 4,
+        touch: 10,
+    },
+    breakpoints : {
+        640: {
+        fixedWidth  : 66,
+        fixedHeight : 50,
+        },
+    },
+    } );
+    
+    main.sync( thumbnails );
+    main.mount();
+    thumbnails.mount();
 }
