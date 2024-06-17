@@ -20,6 +20,9 @@
     .header-button .search .search-box{
         right: 35px;
     }
+    .contact-form .main-title .title{
+        font-size: 30px;
+    }
 }
 
 @media screen and (max-width: 991px) {
@@ -163,6 +166,9 @@
     .product-detail-section .image-content{
         padding-right: 0;
     }
+    .common-banner .main-title .title{
+        font-size: 35px;
+    }
 }
 
 @media screen and (max-width: 575px) {
@@ -279,7 +285,7 @@
         font-size: 25px;
         line-height: 30px
     }
-    .single-page-section{
+    .similar-post-section{
         padding-bottom: 100px;
     }
     .customer-review-section{
@@ -288,9 +294,25 @@
     .product-detail-section{
         padding-bottom: 100px;
     }
+    .about-section{
+        padding-bottom: 100px;
+    }
     .product-main-slide .image .sale{
         left: 10px;
         top: 10px;
+    }
+    .single-page-section{
+        padding-bottom: 50px;
+    }
+    .contact-form{
+        padding: 30px 20px;
+    }
+    .common-banner .main-title .title{
+        font-size: 25px;
+        line-height: 30px;
+    }
+    .contact-form .main-title .title{
+        font-size: 23px;
     }
 }
 
