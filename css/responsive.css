@@ -23,9 +23,20 @@
     .contact-form .main-title .title{
         font-size: 30px;
     }
+    .error-box .main-title .sub-title{
+        max-width: 85%;
+    }
+    .order-select-dropdown-menu{
+        right: 0;
+        left: unset;
+    }
 }
 
 @media screen and (max-width: 991px) {
+    .overlay.active{
+        opacity: 0.3;
+        visibility: visible;
+    }
     .hamburger {
         display: flex;
         flex-direction: column;
@@ -166,8 +177,55 @@
     .product-detail-section .image-content{
         padding-right: 0;
     }
+    .size-option .options li label{
+        --size: 35px;
+    }
+    .size-option .options{
+        gap: 10px;
+    }
     .common-banner .main-title .title{
         font-size: 35px;
+    }
+    .product-description p{
+        font-size: 16px;
+        line-height: 24px;
+    }
+    .error-section .content{
+        max-width: 70%;
+    }
+    .error-section .error-box{
+        min-height: calc(75vh - 60px);
+    }
+
+    /* filter-box-details */
+    .filter-box .close-btn{
+        display: none;
+    }
+    .filter-box-details{
+        position: fixed;
+        opacity: 1;
+        visibility: visible;
+        min-height: 100vh;
+        max-height: 100%;
+        background-color: #fff;
+        max-width: 380px;
+        z-index: 9;
+        top: 0;
+        left: -100%;
+        padding: 80px 20px 50px;
+        transition: var(--default-transition);
+        overflow-y: auto;
+    }
+    .filter-box-details.active{
+        left: 0;
+    }
+    .filter-box-details .close-btn{
+        position: absolute;
+        top: 20px;
+        right: 20px;
+    }
+    .cart-box{
+        margin-top: 60px;
     }
 }
 
@@ -285,16 +343,7 @@
         font-size: 25px;
         line-height: 30px
     }
-    .similar-post-section{
-        padding-bottom: 100px;
-    }
-    .customer-review-section{
-        padding-bottom: 100px;
-    }
-    .product-detail-section{
-        padding-bottom: 100px;
-    }
-    .about-section{
+    .similar-post-section, .shop-list-section, .customer-review-section, .product-detail-section, .about-section, .event-section, .cart-section{
         padding-bottom: 100px;
     }
     .product-main-slide .image .sale{
@@ -313,6 +362,57 @@
     }
     .contact-form .main-title .title{
         font-size: 23px;
+    }
+    .about-section h2{
+        font-size: 22px;
+        line-height: 30px;
+    }
+    .event-box .content{
+        min-height: auto;
+    }
+    .event-box .content p{
+        margin-bottom: 10px;
+    }
+    .error-section .error-box{
+        min-height: calc(80vh - 60px);
+    }
+    .error-section .content {
+        max-width: 100%;
+    }
+    .error-box .main-title .sub-title {
+        max-width: 100%;
+    }
+    .error-box .main-title .title{
+        font-size: 110px;
+        line-height: 110px;
+    }
+    .total-product-list{
+        display: none;
+    }
+    .shop-list-section .product-filter{
+        justify-content: end;
+    }
+    .shop-list-section .shop-filter{
+        gap: 15px;
+    }
+    .filter-box-details{
+        max-width: 100%;
+    }
+    .list-cart-box{
+        max-width: 100%;
+    }
+    .cart-item.cart-action .col-6{
+        flex-direction: column;
+        gap: 10px;
+    }
+    .cart-action input[type="submit"], .cart-action input[type="button"]{
+        margin-right: 0;
+        width: 100%;
+        padding: 6px 10px;
+        min-height: 30px;
+    }
+    .cart-item.cart-action .col-6.text-end{
+        justify-content: start;
     }
 }
 
