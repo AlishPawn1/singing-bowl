@@ -1830,7 +1830,7 @@ footer .logo a svg{
     color: var(--text-color);
 }
 .contact-list li + li{
-    margin-top: 20px;
+    margin-top: 40px;
 }
 .contact-list{
     height: 100%;
