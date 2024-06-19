@@ -137,6 +137,7 @@ ul.contact-list,
     border-radius: 5px;
     border: 1px solid var(--text-color);
     text-transform: capitalize;
+    margin-right: 0;
 }
 .btn-box:hover{
     background-color:#BB7E26 ;
@@ -395,7 +396,6 @@ header .logo a{
 }
 .sub-menu a{
     padding: 6px 20px;
-    text-transform: unset;
     transition: all 0.3s linear;
     font-size: 16px;
     color: #202020;
@@ -2372,6 +2372,25 @@ strong .product-amount {
 
 /* checkout */
 
+/* search */
+.search-result .main-title .title{
+    font-size: 20px;
+}
+.search-result .main-title p{
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+.search-product input[type="search"] {
+    max-width: 300px;
+    width: 100%;    
+    padding: 5px 15px;
+    border: 1px solid #eaeaea;
+    font-size: 14px;
+}
+.search-section{
+    padding-bottom: 150px;
+}
+/* search */
 
 @keyframes spin {
     0% {

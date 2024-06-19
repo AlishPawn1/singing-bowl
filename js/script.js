@@ -124,11 +124,6 @@ jQuery(function ($) {
         const productPriceText = $('.product-price .amount').text().replace(/[^\d.-]/g, '');
         const productPrice = parseFloat(productPriceText);
         
-        if (isNaN(productPrice)) {
-            console.error("Invalid product price:", productPriceText);
-            return;
-        }
-        
         const $quantityInput = $('.quantity-product');
         const $totalAmountElement = $('.total-amt .amount');
         const $cart_subtotal = $('.sub-total #subtotal');
