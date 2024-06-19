@@ -1682,6 +1682,15 @@ footer .logo a svg{
     border-radius: 20px;
     width: 100%;
 }
+.about-gallery.image-1 img{
+    max-height: 355px;
+}
+.about-gallery.image-2 img{
+    max-height: 220px;
+}
+.about-gallery.image-3 img{
+    max-height: 315px;
+}
 .about-section{
     padding-bottom: 150px;
 }
