@@ -1681,6 +1681,7 @@ footer .logo a svg{
 .about-section .about-gallery img{
     border-radius: 20px;
     width: 100%;
+    height: 100%;
 }
 .about-gallery.image-1 img{
     max-height: 355px;
@@ -1803,6 +1804,7 @@ footer .logo a svg{
 }
 .contact-item .icon i{
     font-size: 22px;
+    color: #bca17a;
 }
 .contact-item .title{
     color: #7A7A7A;
@@ -1815,7 +1817,7 @@ footer .logo a svg{
     color: var(--text-color);
 }
 .contact-list li + li{
-    margin-top: 15px;
+    margin-top: 20px;
 }
 .contact-list{
     height: 100%;
