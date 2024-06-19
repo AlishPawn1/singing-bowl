@@ -1,3 +1,17 @@
+@media screen and (min-width: 1025px) and (max-width: 1400px) {
+    .search .search-box{
+        left: -100px;
+    }
+    .popular-bowl-list {
+        padding-top: 20px;
+        margin-right: -12px;
+        margin-left: -12px;
+    }
+    .popular-bowl-list > *{
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+}
 @media screen and (min-width: 1025px) {
     .primary-menu .menu-dropdown:hover>.sub-menu {
         display: block;
