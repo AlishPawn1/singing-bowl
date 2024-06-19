@@ -185,7 +185,188 @@ jQuery(function ($) {
         $(this).toggleClass('active');
         $('.changing-form').slideToggle();
     });
-    
+
+    // add cart loading
+
+    $('.product-price-input .add_to_cart_button').click(function (e) {
+        e.preventDefault();
+        var container = $(this);
+        container.addClass("loading");
+
+        setTimeout(function () {
+            container.removeClass("loading");
+            container.addClass("added");
+        }, 2000);
+    });
+
+
+    // select option
+
+    $(document).ready(function () {
+        const form = $("#order-select");
+        const dropdowns = $(".order-dropdown");
+
+        // Check if Dropdowns exist and create custom dropdown for each
+        dropdowns.each(function () {
+            createCustomDropdown($(this));
+        });
+
+        // Prevent form submission
+        form.on("submit", function (e) {
+            e.preventDefault();
+        });
+
+        // Create Custom Dropdown
+        function createCustomDropdown(dropdown) {
+            const options = dropdown.find("option");
+            const customDropdown = $("<div class='order-select-dropdown position-relative'></div>");
+            dropdown.after(customDropdown);
+
+            const selected = $("<div class='order-select-dropdown-select'></div>").text(options.eq(0).text());
+            customDropdown.append(selected);
+
+            const menu = $("<div class='order-select-dropdown-menu'></div>");
+            customDropdown.append(menu);
+
+            selected.on("click", function () {
+                menu.toggle();
+                selected.toggleClass('open');
+            });
+
+            const menuInnerWrapper = $("<div class='order-select-dropdown-menu-inner'></div>");
+            menu.append(menuInnerWrapper);
+
+            options.each(function (index, option) {
+                const item = $("<div class='order-select-dropdown-menu-item'></div>")
+                    .data("value", $(option).val())
+                    .text($(option).text());
+                menuInnerWrapper.append(item);
+
+                item.on("click", function () {
+                    setSelected(selected, dropdown, menu, $(this));
+                });
+            });
+
+            menuInnerWrapper.find("div:first-child").addClass("is-select");
+
+            $(document).on("click", function (e) {
+                if (!$(e.target).closest(".order-select-dropdown").length && menu.is(":visible")) {
+                    menu.hide();
+                    selected.removeClass('open');
+                }
+            });
+
+            dropdown.hide();
+        }
+
+        function setSelected(selected, dropdown, menu, item) {
+            selected.text(item.text());
+            dropdown.val(item.data("value"));
+
+            menu.hide();
+            selected.removeClass('open');
+            item.addClass("is-select").siblings().removeClass("is-select");
+        }
+    });
+
+    // checkout-country-search
+
+    $(document).ready(function () {
+        const form = $("#checkout-country-form");
+        const dropdowns = $(".checkout-country-dropdown");
+
+        // Check if Dropdowns exist
+        if (dropdowns.length > 0) {
+            dropdowns.each(function () {
+                createCustomDropdown($(this));
+            });
+        }
+
+        // Prevent form submission
+        if (form.length > 0) {
+            form.on("submit", function (e) {
+                e.preventDefault();
+            });
+        }
+
+        // Create Custom Dropdown
+        function createCustomDropdown(dropdown) {
+            const options = dropdown.find("option");
+            const customDropdown = $("<div class='country-form-dropdown position-relative'></div>");
+            dropdown.after(customDropdown);
+
+            const selected = $("<div class='country-form-dropdown-select'></div>");
+            selected.text(options.eq(0).text());
+            customDropdown.append(selected);
+
+            const menu = $("<div class='country-form-dropdown-menu'></div>");
+            customDropdown.append(menu);
+            selected.on("click", function () {
+                menu.toggle();
+                $(this).toggleClass('open', menu.is(':visible'));
+                menu.find("input").focus();
+            });
+
+            const search = $("<input class='country-form-dropdown-menu-search' placeholder='Search...'>");
+            menu.append(search);
+
+            const menuInnerWrapper = $("<div class='country-form-dropdown-menu-inner'></div>");
+            menu.append(menuInnerWrapper);
+
+            options.each(function (index, option) {
+                const item = $("<div class='country-form-dropdown-menu-item'></div>");
+                item.data("value", $(option).val());
+                item.text($(option).text());
+                menuInnerWrapper.append(item);
+
+                item.on("click", function () {
+                    setSelected(selected, dropdown, menu, $(this));
+                });
+            });
+
+            menuInnerWrapper.find("div:first-child").addClass("selected");
+
+            search.on("input", function () {
+                filterItems(options, menu, search);
+            });
+
+            $(document).on("click", function (e) {
+                if (!$(e.target).closest(".country-form-dropdown").length && menu.is(":visible")) {
+                    menu.hide();
+                    selected.removeClass('open');
+                }
+            });
+
+            dropdown.hide();
+        }
+
+        function setSelected(selected, dropdown, menu, item) {
+            const value = item.data("value");
+            const label = item.text();
+
+            selected.text(label);
+            dropdown.val(value);
+
+            menu.hide();
+            selected.removeClass('open');
+            menu.find("input").val("");
+            menu.find(".country-form-dropdown-menu-inner div").show();
+            item.addClass("is-select").siblings().removeClass("is-select");
+        }
+
+        function filterItems(options, menu, search) {
+            const customOptions = menu.find(".country-form-dropdown-menu-inner div");
+            const value = search.val().toLowerCase();
+
+            options.each(function (index, option) {
+                if ($(option).text().toLowerCase().includes(value)) {
+                    customOptions.eq(index).show();
+                } else {
+                    customOptions.eq(index).hide();
+                }
+            });
+        }
+    });
 
     // country-search
 
@@ -286,90 +467,6 @@ jQuery(function ($) {
         }
     });
 
-
-    // add cart loading
-
-    $('.product-price-input .add_to_cart_button').click(function (e) {
-        e.preventDefault();
-        var container = $(this);
-        container.addClass("loading");
-
-        setTimeout(function () {
-            container.removeClass("loading");
-            container.addClass("added");
-        }, 2000);
-    });
-
-
-    // select option
-
-    $(document).ready(function () {
-        const form = $("#order-select");
-        const dropdowns = $(".order-dropdown");
-
-        // Check if Dropdowns exist and create custom dropdown for each
-        dropdowns.each(function () {
-            createCustomDropdown($(this));
-        });
-
-        // Prevent form submission
-        form.on("submit", function (e) {
-            e.preventDefault();
-        });
-
-        // Create Custom Dropdown
-        function createCustomDropdown(dropdown) {
-            const options = dropdown.find("option");
-            const customDropdown = $("<div class='order-select-dropdown position-relative'></div>");
-            dropdown.after(customDropdown);
-
-            const selected = $("<div class='order-select-dropdown-select'></div>").text(options.eq(0).text());
-            customDropdown.append(selected);
-
-            const menu = $("<div class='order-select-dropdown-menu'></div>");
-            customDropdown.append(menu);
-
-            selected.on("click", function () {
-                menu.toggle();
-                selected.toggleClass('open');
-            });
-
-            const menuInnerWrapper = $("<div class='order-select-dropdown-menu-inner'></div>");
-            menu.append(menuInnerWrapper);
-
-            options.each(function (index, option) {
-                const item = $("<div class='order-select-dropdown-menu-item'></div>")
-                    .data("value", $(option).val())
-                    .text($(option).text());
-                menuInnerWrapper.append(item);
-
-                item.on("click", function () {
-                    setSelected(selected, dropdown, menu, $(this));
-                });
-            });
-
-            menuInnerWrapper.find("div:first-child").addClass("is-select");
-
-            $(document).on("click", function (e) {
-                if (!$(e.target).closest(".order-select-dropdown").length && menu.is(":visible")) {
-                    menu.hide();
-                    selected.removeClass('open');
-                }
-            });
-
-            dropdown.hide();
-        }
-
-        function setSelected(selected, dropdown, menu, item) {
-            selected.text(item.text());
-            dropdown.val(item.data("value"));
-
-            menu.hide();
-            selected.removeClass('open');
-            item.addClass("is-select").siblings().removeClass("is-select");
-        }
-    });
-
     $('.filter-box svg').click(function () {
         $('.filter-box').addClass('active');
         $('.filter-box-details').addClass('active');
@@ -430,7 +527,23 @@ jQuery(function ($) {
         $(this).toggleClass('active');
     });
 
+    // create account
+    $(".create-account-pw").hide();
+    $("#checkbox").change(function() {
+        if ($(this).is(":checked")) {
+            $(".create-account-pw").slideDown();
+        } else {
+            $(".create-account-pw").slideUp();
+        }
+    });
+
 });
+
+function toggleForm(formClassName) {
+    var form = $('.' + formClassName);
+    $('.login-form, .coupon-form').not(form).slideUp();
+    form.slideToggle();
+}
 
 if (document.querySelector('.banner-slide')) {
     banner_slide = new Splide('.banner-slide', {

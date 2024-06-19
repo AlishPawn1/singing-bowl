@@ -127,6 +127,17 @@ ul.contact-list,
     background-color: #BA9457;
     color: #fff;
 }
+.btn-box.black{
+    max-width: 160px;
+    margin-right: 10px;
+    padding: 12px 10px;
+    min-height: 45px;
+    background-color: var(--text-color) !important;
+    color: #fff;
+    border-radius: 5px;
+    border: 1px solid var(--text-color);
+    text-transform: capitalize;
+}
 .btn-box:hover{
     background-color:#BB7E26 ;
     color: #fff;
@@ -198,6 +209,12 @@ ul.contact-list,
 }
 .form-textarea{
     height: 100px;
+}
+.required {
+    color: red;
+}
+input, select, textarea{
+    outline: unset;
 }
 
 /* splide */
@@ -2059,6 +2076,138 @@ footer .logo a svg{
 }
 
 /* cart */
+
+/* checkout */
+
+.checkout-section{
+    padding-bottom: 150px;
+}
+.coupon-toggle, .login-toggle {
+    border: 1px solid #bbdefb;
+    padding: 15px 20px;
+    margin-bottom: 30px;
+}
+.login-form, .coupon-form, .create-account-pw {
+    display: none;
+}
+.login-form, .coupon-form {
+    margin: 30px 0;
+}
+.login-form p, .coupon-form p {
+    font-size: 14px;
+    margin: 0;
+}
+.login-form .form-group {
+    max-width: 350px;
+    width: 100%;
+    margin-bottom: 6px;
+}
+.lost-password a {
+    font-size: 14px;
+    color: #BB7E26;
+}
+.billing-additional .title {
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+.checkout-section label {
+    display: block;
+    font-size: 14px;
+    line-height: 2;
+}
+.create-account-pw {
+    padding-top: 5px;
+}
+.create-account .create-ac-box{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+.create-account .create-ac-box *{
+    cursor: pointer;
+    margin-bottom: 0;
+}
+.margin-bottom-cart {
+    margin-bottom: 70px;
+}
+.checkout-order-list thead {
+    background-color: #f2f2f2;
+}
+.checkout-order-list th {
+    width: 50%;
+}
+.checkout-order-list table{
+    width: 100%;
+}
+.product-name, .cart-subtotal *, .order-total *, .product-total, th.product-name{
+    color: var(--text-color);
+    font-size: 14px;
+    text-transform: capitalize;
+}
+.checkout-order-list th, .checkout-order-list td {
+    padding: 10px;
+    border-bottom: 1px solid #e7e7e7;
+}
+.checkout-cart-item .product-name{
+    color: rgb(122, 122, 122);
+}
+.checkout-cart-item .product-quantity{
+    color: var(--text-color);
+}
+.billing-additional .form-input{
+    margin-bottom: 15px;
+    outline: unset;
+}
+.billing-additional > .row{
+    margin-bottom: 30px;
+}
+.billing-additional .place-order input{
+    max-width: 160px;
+    margin-right: 10px;
+    padding: 12px 10px;
+    min-height: 45px;
+    background-color: var(--text-color);
+    color: #fff;
+    border-radius: 5px;
+    border: 1px solid var(--text-color);
+    text-transform: capitalize;
+}
+.toggle-item .btn-box.black{
+    max-width: unset;
+    min-height: unset;
+    padding: 5px 10px;
+    margin-right: 0;
+    width: fit-content;
+}
+.toggle-item{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.coupon-form .toggle-item{
+    flex-direction: column;
+    gap: 10px;
+    align-items: start;
+    justify-content: unset;
+}
+.toggle-item label{
+    margin-bottom: 0;
+}
+.remember-box{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.remember-box *{
+    cursor: pointer;
+}
+.form-coupon{
+    display: flex;
+    gap: 10px;
+}
+
+/* checkout */
+
 
 @keyframes spin {
     0% {

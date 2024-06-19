@@ -343,7 +343,7 @@
         font-size: 25px;
         line-height: 30px
     }
-    .similar-post-section, .shop-list-section, .customer-review-section, .product-detail-section, .about-section, .event-section, .cart-section{
+    .similar-post-section, .shop-list-section, .customer-review-section, .product-detail-section, .about-section, .event-section, .cart-section, .checkout-section{
         padding-bottom: 100px;
     }
     .product-main-slide .image .sale{
@@ -413,6 +413,12 @@
     }
     .cart-item.cart-action .col-6.text-end{
         justify-content: start;
+    }
+    .toggle-item{
+        flex-direction: column;
+        align-items: unset;
+        gap: 10px;
+        justify-content: unset;
     }
 }
 
