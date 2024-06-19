@@ -2245,9 +2245,6 @@ footer .logo a svg{
     cursor: pointer;
     margin-bottom: 0;
 }
-.margin-bottom-cart {
-    margin-bottom: 70px;
-}
 .checkout-order-list thead {
     background-color: #f2f2f2;
 }
@@ -2368,6 +2365,13 @@ strong .product-amount {
     font-size: 14px;
     font-weight: 700;
     line-height: 21px;
+}
+.place-order-box{
+    padding: 32px 32px 18px;
+    border: 1px solid #EAEBED;
+}
+.checkout-order-list{
+    margin-bottom: 30px;
 }
 
 /* checkout */
