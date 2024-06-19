@@ -1758,6 +1758,62 @@ footer .logo a svg{
     max-width: 608px;
     margin: 0 auto 32px;
 }
+.contact-banner .main-title .title{
+    font-size: 20px;
+    font-weight: 400;
+    color: #696969;
+    margin-bottom: 20px;
+}
+.contact-banner .main-title .sub-title{
+    margin-bottom: 30px;
+    font-size: 50px;
+    font-weight: 800;
+    color: #000;
+    /* line-height: 1.4; */
+}
+.contact-banner .main-title p {
+    margin-top: 18px;
+    font-size: 16px;
+    font-weight: 400;
+    color: #696969;
+    line-height: 1.6;
+}
+.contact-item{
+    display: flex;
+    gap: 15px;
+}
+.contact-item .icon{
+    --size: 50px;
+    height: var(--size);
+    width: var(--size);
+    min-width: var(--size);
+    border-radius: 50%;
+    background-color: #F4F2EE;
+    display: grid;
+    place-content: center;
+}
+.contact-item .icon i{
+    font-size: 22px;
+}
+.contact-item .title{
+    color: #7A7A7A;
+    font-size: 16px;
+    font-weight: 500;
+}
+.contact-item .text{
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--text-color);
+}
+.contact-list li + li{
+    margin-top: 15px;
+}
+.contact-list{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
 
 /* contact-section */
 
@@ -2395,6 +2451,8 @@ strong .product-amount {
     padding-bottom: 150px;
 }
 /* search */
+
+
 
 @keyframes spin {
     0% {
