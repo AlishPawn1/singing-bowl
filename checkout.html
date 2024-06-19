@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Checkout</title>
+    <title>Checkout page</title>
     <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="css/splide.min.css">
     <link rel="stylesheet" type="text/css" href="css/all.css">
@@ -561,8 +561,33 @@
                             </tfoot>
                         </table>
                     </div>
-                    <div class="place-order">
-                        <input type="submit" class="btn read-more" value="place order">
+                    <div class="product-payment margin-bottom-cart">
+                        <ul class="payment-method p-0">
+                            <li class="payment-option">
+                                <input type="radio" id="payment_method_bank" checked name="payment_method">
+                                <label for="payment_method_bank">Direct bank transfer</label>
+                                <div class="payment_box">
+                                    <p>Make your payment directly into our bank account. Please use your Order ID as the payment reference. Your order will not be shipped until the funds have cleared in our account.</p>
+                                </div>
+                            </li>
+                            <li class="payment-option">
+                                <input type="radio" id="payment_method_check" name="payment_method">
+                                <label for="payment_method_check">Check payments</label>
+                                <div class="payment_box">
+                                    <p>Please send a check to Store Name, Store Street, Store Town, Store State / County, Store Postcode.</p>
+                                </div>
+                            </li>
+                            <li class="payment-option">
+                                <input type="radio" id="payment_method_cod" name="payment_method">
+                                <label for="payment_method_cod">Cash on delivery</label>
+                                <div class="payment_box">
+                                    <p>Pay with cash upon delivery.</p>
+                                </div>
+                            </li>   
+                        </ul>
+                        <div class="place-order">
+                            <input type="submit" class="btn-box black" value="place order">
+                        </div>
                     </div>
                 </div>
             </form>
@@ -686,7 +711,6 @@
             </div>
         </div>
     </footer>
-
 
     <!-- cart-box -->
 

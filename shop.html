@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>shop</title>
+    <title>Singing Bowl</title>
     <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="css/splide.min.css">
     <link rel="stylesheet" type="text/css" href="css/all.css">
@@ -59,6 +59,9 @@
                         <li>
                             <a href="contact.html" title="">contact</a>
                         </li>
+                        <li>
+                            <a href="404page.html" title="">error page</a>
+                        </li>
                     </ul>
                     <div class="header-button">
                         <div class="search">
@@ -75,7 +78,7 @@
                         </div>
                         <ul class="whist-list">
                             <li>
-                                <button class="icon">
+                                <button class="icon profile-btn">
                                     <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M9.99999 10.3849C12.7125 10.3849 14.9114 8.28401 14.9114 5.69245C14.9114 3.10088 12.7125 1 9.99999 1C7.28748 1 5.08856 3.10088 5.08856 5.69245C5.08856 8.28401 7.28748 10.3849 9.99999 10.3849Z" stroke="#fff" stroke-width="2" stroke-miterlimit="10"/>
                                         <path d="M1 18.9837L1.31714 17.3049C1.6918 15.3661 2.76549 13.6139 4.35169 12.3527C5.9379 11.0916 7.93639 10.4011 10 10.4014C12.0661 10.4018 14.0665 11.0946 15.6531 12.359C17.2396 13.6235 18.3118 15.3795 18.6829 17.3213L19 19.0001" stroke="#fff" stroke-width="2" stroke-miterlimit="10"/>
@@ -83,14 +86,14 @@
                                 </button>
                             </li>
                             <li>
-                                <button class="icon">
+                                <button class="icon whist-btn">
                                     <svg width="23" height="20" viewBox="0 0 23 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path fill-rule="evenodd" clip-rule="evenodd" d="M11.145 3.21915C9.11664 0.855351 5.72729 0.124836 3.18593 2.28936C0.644565 4.45389 0.286776 8.07284 2.28252 10.6329C3.94186 12.7613 8.96356 17.2504 10.6094 18.7034C10.7935 18.8659 10.8856 18.9472 10.993 18.9791C11.0867 19.007 11.1893 19.007 11.283 18.9791C11.3905 18.9472 11.4824 18.8659 11.6666 18.7034C13.3125 17.2504 18.3341 12.7613 19.9935 10.6329C21.9892 8.07284 21.6751 4.43112 19.09 2.28936C16.505 0.147605 13.1733 0.855351 11.145 3.21915Z" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                     </svg> 
                                 </button>
                             </li>
                             <li>
-                                <button class="icon">
+                                <button class="icon cart-btn">
                                     <svg width="22" height="20" viewBox="0 0 22 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M1.82436 17.3738C3.1427 19 5.59637 19 10.5037 19H11.2963C16.2036 19 18.6573 19 19.9756 17.3738M1.82436 17.3738C0.505999 15.7477 0.958181 13.2789 1.86256 8.34141C2.5057 4.83008 2.82727 3.07442 4.04811 2.0372M19.9756 17.3738C21.294 15.7477 20.8418 13.2789 19.9375 8.34141C19.2943 4.83008 18.9727 3.07442 17.7519 2.0372M17.7519 2.0372C16.531 1 14.7862 1 11.2963 1H10.5037C7.01388 1 5.26896 1 4.04811 2.0372" stroke="#fff" stroke-width="2"/>
                                         <path d="M7.79102 5.5C8.2436 6.81084 9.46486 7.75 10.9003 7.75C12.3358 7.75 13.5571 6.81084 14.0096 5.5" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
@@ -100,16 +103,16 @@
                         </ul>
                     </div>
                 </div>
-                    <div class="hamburger">
-                        <span class="bar"></span>
-                        <span class="bar"></span>
-                        <span class="bar"></span>
-                    </div>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
             </nav>
         </div>
         <div class="overlay"></div>
+        <div class="overlay-cart"></div>
     </header>
-
     <!-- header -->
 
     <!-- inner-banner -->
@@ -137,7 +140,7 @@
             <!-- shop-filter -->
             <div class="product-filter">
                 <div class="total-product-list">
-                    <span>Showing 1–4 of 8 results</span>
+                    <span>Showing 1–8 of 16 results</span>
                 </div>
                 <div class="shop-filter">
                     <div class="filter-box">
@@ -173,17 +176,13 @@
                 <ul class="remove-filter">
                     <li class="clear-all">
                         <a href="#">
-                            <span class="remove-filter-icon">
-                                <i class="fa-solid fa-x"></i>
-                            </span>
+                            <span class="remove-filter-icon"></span>
                             Clear filters
                         </a>
                     </li>
                     <li>
                         <a href="#">
-                            <span class="remove-filter-icon">
-                                <i class="fa-solid fa-x"></i>
-                            </span>
+                            <span class="remove-filter-icon"></span>
                             black
                         </a>
                     </li>
@@ -221,25 +220,33 @@
                                 <span class="icon"><i class="fa-solid fa-minus"></i></span>
                             </h3>
                             <form action="">
-                                <div class="filter-color-list filter-list">
+                                <div class="filter-color-list filter-list filter-radio">
                                     <div class="form-group">
-                                        <input type="radio" name="color" value="black" id="black">
-                                        <label for="black" style="--color: #000;">Black</label>
+                                        <div class="label-input">
+                                            <input type="radio" name="color" value="black" id="black">
+                                            <label for="black" style="--color: #000;">Black</label>
+                                        </div>
                                         <span class="number-store">5</span>
                                     </div>
                                     <div class="form-group">
-                                        <input type="radio" name="color" value="red" id="red">
-                                        <label for="red" style="--color: #f00;">Red</label>
+                                        <div class="label-input">
+                                            <input type="radio" name="color" value="red" id="red">
+                                            <label for="red" style="--color: #f00;">Red</label>
+                                        </div>
                                         <span class="number-store">4</span>
                                     </div>
                                     <div class="form-group">
-                                        <input type="radio" name="color" value="green" id="green">
-                                        <label for="green" style="--color: #0f0;">Green</label>
+                                        <div class="label-input">
+                                            <input type="radio" name="color" value="green" id="green">
+                                            <label for="green" style="--color: #0f0;">Green</label>
+                                        </div>
                                         <span class="number-store">3</span>
                                     </div>
                                     <div class="form-group">
-                                        <input type="radio" name="color" value="blue" id="blue">
-                                        <label for="blue" style="--color: #00f;">Blue</label>
+                                        <div class="label-input">
+                                            <input type="radio" name="color" value="blue" id="blue">
+                                            <label for="blue" style="--color: #00f;">Blue</label>
+                                        </div>
                                         <span class="number-store">2</span>
                                     </div>
                                 </div>
@@ -273,30 +280,40 @@
                                 <span class="icon"><i class="fa-solid fa-minus"></i></span>
                             </h3>
                             <form action="">
-                                <div class="filter-size filter-list">
+                                <div class="filter-size filter-list filter-radio">
                                     <div class="form-group">
-                                        <input type="radio" id="l" name="filter-size">
-                                        <label for="l">l</label>
+                                        <div class="label-input">
+                                            <input type="radio" id="l" name="filter-size">
+                                            <label for="l">l</label>
+                                        </div>
                                         <span class="number-store">9</span>
                                     </div>
                                     <div class="form-group">
-                                        <input type="radio" id="m" name="filter-size">
-                                        <label for="m">m</label>
+                                        <div class="label-input">
+                                            <input type="radio" id="m" name="filter-size">
+                                            <label for="m">m</label>
+                                        </div>
                                         <span class="number-store">8</span>
                                     </div>
                                     <div class="form-group">
-                                        <input type="radio" id="s" name="filter-size">
-                                        <label for="s">s</label>
+                                        <div class="label-input">
+                                            <input type="radio" id="s" name="filter-size">
+                                            <label for="s">s</label>
+                                        </div>
                                         <span class="number-store">7</span>
                                     </div>
                                     <div class="form-group">
-                                        <input type="radio" id="xl" name="filter-size">
-                                        <label for="xl">xl</label>
+                                        <div class="label-input">
+                                            <input type="radio" id="xl" name="filter-size">
+                                            <label for="xl">xl</label>
+                                        </div>
                                         <span class="number-store">6</span>
                                     </div>
                                     <div class="form-group">
-                                        <input type="radio" id="xxl" name="filter-size">
-                                        <label for="xxl">xxl</label>
+                                        <div class="label-input">
+                                            <input type="radio" id="xxl" name="filter-size">
+                                            <label for="xxl">xxl</label>
+                                        </div>
                                         <span class="number-store">5</span>
                                     </div>
                                 </div>
@@ -310,20 +327,26 @@
                                 <span class="icon"><i class="fa-solid fa-minus"></i></span>
                             </h3>
                             <form action="">
-                                <div class="filter-size filter-category filter-list">
+                                <div class="filter-size filter-category filter-list filter-radio">
                                     <div class="form-group">
-                                        <input type="radio" id="tibetan-healing-bowl" name="filter-size">
-                                        <label for="tibetan-healing-bowl">Tibetan Healing Bowl</label>
+                                        <div class="label-input">
+                                            <input type="radio" id="tibetan-healing-bowl" name="filter-size">
+                                            <label for="tibetan-healing-bowl">Tibetan Healing Bowl</label>
+                                        </div>
                                         <span class="number-store">9</span>
                                     </div>
                                     <div class="form-group">
-                                        <input type="radio" id="singing-bowl" name="filter-size">
-                                        <label for="singing-bowl">Singing Bowl</label>
+                                        <div class="label-input">
+                                            <input type="radio" id="singing-bowl" name="filter-size">
+                                            <label for="singing-bowl">Singing Bowl</label>
+                                        </div>
                                         <span class="number-store">8</span>
                                     </div>
                                     <div class="form-group">
-                                        <input type="radio" id="full-moon-bowl" name="filter-size">
-                                        <label for="full-moon-bowl">Full Moon Bowl</label>
+                                        <div class="label-input">
+                                            <input type="radio" id="full-moon-bowl" name="filter-size">
+                                            <label for="full-moon-bowl">Full Moon Bowl</label>
+                                        </div>
                                         <span class="number-store">7</span>
                                     </div>
                                 </div>
@@ -332,7 +355,6 @@
                     </div>
                 </div>
             </div>
-
             <!-- shop-filter -->
             <div class="row g-4">
                 <div class="col-lg-3 col-sm-6">
@@ -465,7 +487,151 @@
                         </div>
                     </div>
                 </div>
+                <div class="col-lg-3 col-sm-6">
+                    <div class="category-card">
+                        <div class="image">
+                            <a href="product-detail.html" title=""> 
+                                <img src="image/category-img-1.png" class="img-cover" alt="">
+                            </a>
+                            <button class="icon">
+                                <svg width="22" height="21" viewBox="0 0 22 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M11.3541 3.90628C9.40784 1.57902 6.15557 0.8598 3.717 2.99087C1.27842 5.12193 0.935098 8.68494 2.85013 11.2054C4.44235 13.3009 9.26096 17.7206 10.8402 19.1512C11.0169 19.3112 11.1052 19.3912 11.2083 19.4226C11.2982 19.45 11.3966 19.45 11.4866 19.4226C11.5897 19.3912 11.678 19.3112 11.8547 19.1512C13.434 17.7206 18.2525 13.3009 19.8448 11.2054C21.7598 8.68494 21.4584 5.09951 18.9779 2.99087C16.4974 0.882218 13.3004 1.57902 11.3541 3.90628Z" stroke="#202020" stroke-width="1.76991" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>                                                    
+                            </button>
+                        </div>
+                        <div class="content">
+                            <div class="main-title">
+                                <h3 class="title"><a href="product-detail.html" title="">Tibetan Singing Bowl</a></h3>
+                                <div class="price">
+                                    <del><span>$</span>39.00</del>
+                                    <ins><span>$</span>29.00</ins>
+                                </div>
+                            </div>
+                            <div class="add-to-cart">
+                                <button>
+                                    <svg width="16" height="15" viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M1.30206 12.7404C2.20949 13.8612 3.89837 13.8611 7.27614 13.8611H7.82167C11.1994 13.8611 12.8883 13.8612 13.7957 12.7404M1.30206 12.7404C0.394625 11.6198 0.705865 9.91831 1.32835 6.51548C1.77103 4.09555 1.99237 2.88558 2.83269 2.17075M13.7957 12.7404C14.7031 11.6198 14.3919 9.91831 13.7695 6.51548C13.3267 4.09555 13.1054 2.88558 12.2651 2.17075M12.2651 2.17075C11.4248 1.45593 10.2238 1.45593 7.82167 1.45593H7.27614C4.87405 1.45593 3.67301 1.45593 2.83269 2.17075" stroke="#202020" stroke-width="1.32743"/>
+                                        <path d="M5.40893 4.55725C5.72051 5.46096 6.56125 6.10843 7.54946 6.10843C8.53768 6.10843 9.37845 5.46096 9.69 4.55725" stroke="#202020" stroke-width="1.32743" stroke-linecap="round"/>
+                                    </svg>                                                        
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6">
+                    <div class="category-card">
+                        <div class="image">
+                            <a href="product-detail.html" title="">
+                                <img src="image/category-img-2.png" class="img-cover" alt="">
+                            </a>
+                            <button class="icon">
+                                <svg width="22" height="21" viewBox="0 0 22 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M11.3541 3.90628C9.40784 1.57902 6.15557 0.8598 3.717 2.99087C1.27842 5.12193 0.935098 8.68494 2.85013 11.2054C4.44235 13.3009 9.26096 17.7206 10.8402 19.1512C11.0169 19.3112 11.1052 19.3912 11.2083 19.4226C11.2982 19.45 11.3966 19.45 11.4866 19.4226C11.5897 19.3912 11.678 19.3112 11.8547 19.1512C13.434 17.7206 18.2525 13.3009 19.8448 11.2054C21.7598 8.68494 21.4584 5.09951 18.9779 2.99087C16.4974 0.882218 13.3004 1.57902 11.3541 3.90628Z" stroke="#202020" stroke-width="1.76991" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>                                                    
+                            </button>
+                            <span class="discount-price">
+                                HOT 26%
+                            </span>
+                        </div>
+                        <div class="content">
+                            <div class="main-title">
+                                <h3 class="title"><a href="product-detail.html" title="">3 Inch Round Tibetan Singing Bowl</a></h3>
+                                <div class="price">
+                                    <del><span>$</span>39.00</del>
+                                    <ins><span>$</span>29.00</ins>
+                                </div>
+                            </div>
+                            <div class="add-to-cart">
+                                <button>
+                                    <svg width="16" height="15" viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M1.30206 12.7404C2.20949 13.8612 3.89837 13.8611 7.27614 13.8611H7.82167C11.1994 13.8611 12.8883 13.8612 13.7957 12.7404M1.30206 12.7404C0.394625 11.6198 0.705865 9.91831 1.32835 6.51548C1.77103 4.09555 1.99237 2.88558 2.83269 2.17075M13.7957 12.7404C14.7031 11.6198 14.3919 9.91831 13.7695 6.51548C13.3267 4.09555 13.1054 2.88558 12.2651 2.17075M12.2651 2.17075C11.4248 1.45593 10.2238 1.45593 7.82167 1.45593H7.27614C4.87405 1.45593 3.67301 1.45593 2.83269 2.17075" stroke="#202020" stroke-width="1.32743"/>
+                                        <path d="M5.40893 4.55725C5.72051 5.46096 6.56125 6.10843 7.54946 6.10843C8.53768 6.10843 9.37845 5.46096 9.69 4.55725" stroke="#202020" stroke-width="1.32743" stroke-linecap="round"/>
+                                    </svg>                                                        
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6">
+                    <div class="category-card">
+                        <div class="image">
+                            <a href="product-detail.html" title=""> 
+                                <img src="image/category-img-1.png" class="img-cover" alt="">
+                            </a>
+                            <button class="icon">
+                                <svg width="22" height="21" viewBox="0 0 22 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M11.3541 3.90628C9.40784 1.57902 6.15557 0.8598 3.717 2.99087C1.27842 5.12193 0.935098 8.68494 2.85013 11.2054C4.44235 13.3009 9.26096 17.7206 10.8402 19.1512C11.0169 19.3112 11.1052 19.3912 11.2083 19.4226C11.2982 19.45 11.3966 19.45 11.4866 19.4226C11.5897 19.3912 11.678 19.3112 11.8547 19.1512C13.434 17.7206 18.2525 13.3009 19.8448 11.2054C21.7598 8.68494 21.4584 5.09951 18.9779 2.99087C16.4974 0.882218 13.3004 1.57902 11.3541 3.90628Z" stroke="#202020" stroke-width="1.76991" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>                                                    
+                            </button>
+                        </div>
+                        <div class="content">
+                            <div class="main-title">
+                                <h3 class="title"><a href="product-detail.html" title="">Tibetan Singing Bowl</a></h3>
+                                <div class="price">
+                                    <del><span>$</span>39.00</del>
+                                    <ins><span>$</span>29.00</ins>
+                                </div>
+                            </div>
+                            <div class="add-to-cart">
+                                <button>
+                                    <svg width="16" height="15" viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M1.30206 12.7404C2.20949 13.8612 3.89837 13.8611 7.27614 13.8611H7.82167C11.1994 13.8611 12.8883 13.8612 13.7957 12.7404M1.30206 12.7404C0.394625 11.6198 0.705865 9.91831 1.32835 6.51548C1.77103 4.09555 1.99237 2.88558 2.83269 2.17075M13.7957 12.7404C14.7031 11.6198 14.3919 9.91831 13.7695 6.51548C13.3267 4.09555 13.1054 2.88558 12.2651 2.17075M12.2651 2.17075C11.4248 1.45593 10.2238 1.45593 7.82167 1.45593H7.27614C4.87405 1.45593 3.67301 1.45593 2.83269 2.17075" stroke="#202020" stroke-width="1.32743"/>
+                                        <path d="M5.40893 4.55725C5.72051 5.46096 6.56125 6.10843 7.54946 6.10843C8.53768 6.10843 9.37845 5.46096 9.69 4.55725" stroke="#202020" stroke-width="1.32743" stroke-linecap="round"/>
+                                    </svg>                                                        
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6">
+                    <div class="category-card">
+                        <div class="image">
+                            <a href="product-detail.html" title="">
+                                <img src="image/category-img-2.png" class="img-cover" alt="">
+                            </a>
+                            <button class="icon">
+                                <svg width="22" height="21" viewBox="0 0 22 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M11.3541 3.90628C9.40784 1.57902 6.15557 0.8598 3.717 2.99087C1.27842 5.12193 0.935098 8.68494 2.85013 11.2054C4.44235 13.3009 9.26096 17.7206 10.8402 19.1512C11.0169 19.3112 11.1052 19.3912 11.2083 19.4226C11.2982 19.45 11.3966 19.45 11.4866 19.4226C11.5897 19.3912 11.678 19.3112 11.8547 19.1512C13.434 17.7206 18.2525 13.3009 19.8448 11.2054C21.7598 8.68494 21.4584 5.09951 18.9779 2.99087C16.4974 0.882218 13.3004 1.57902 11.3541 3.90628Z" stroke="#202020" stroke-width="1.76991" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>                                                    
+                            </button>
+                            <span class="discount-price">
+                                HOT 26%
+                            </span>
+                        </div>
+                        <div class="content">
+                            <div class="main-title">
+                                <h3 class="title"><a href="product-detail.html" title="">3 Inch Round Tibetan Singing Bowl</a></h3>
+                                <div class="price">
+                                    <del><span>$</span>39.00</del>
+                                    <ins><span>$</span>29.00</ins>
+                                </div>
+                            </div>
+                            <div class="add-to-cart">
+                                <button>
+                                    <svg width="16" height="15" viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M1.30206 12.7404C2.20949 13.8612 3.89837 13.8611 7.27614 13.8611H7.82167C11.1994 13.8611 12.8883 13.8612 13.7957 12.7404M1.30206 12.7404C0.394625 11.6198 0.705865 9.91831 1.32835 6.51548C1.77103 4.09555 1.99237 2.88558 2.83269 2.17075M13.7957 12.7404C14.7031 11.6198 14.3919 9.91831 13.7695 6.51548C13.3267 4.09555 13.1054 2.88558 12.2651 2.17075M12.2651 2.17075C11.4248 1.45593 10.2238 1.45593 7.82167 1.45593H7.27614C4.87405 1.45593 3.67301 1.45593 2.83269 2.17075" stroke="#202020" stroke-width="1.32743"/>
+                                        <path d="M5.40893 4.55725C5.72051 5.46096 6.56125 6.10843 7.54946 6.10843C8.53768 6.10843 9.37845 5.46096 9.69 4.55725" stroke="#202020" stroke-width="1.32743" stroke-linecap="round"/>
+                                    </svg>                                                        
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
+            <ul class="pagination">
+                <li>
+                    <a href="#" class="page prev"><</a>
+                </li>
+                <li>
+                    <span class="page current">1</span>
+                </li>
+                <li>
+                    <a href="#" class="page">2</a>
+                </li>
+                <li>
+                    <a href="#" class="page next">></a>
+                </li>
+            </ul>
         </div>
     </section>
 
@@ -586,6 +752,60 @@
             </div>
         </div>
     </footer>
+
+    <!-- cart-box -->
+
+    <div class="list-cart-box">
+        <div class="box-head">
+            <div class="basket-box">
+                <span class="text">Your Cart</span>
+            </div>
+            <span class="icon">
+                <i class="fa-solid fa-xmark"></i>
+            </span>
+        </div>
+        <div class="box-body">
+            <div class="cart-product-list">
+                <div class="cart-product-item">
+                    <div class="image">
+                        <img src="image/category-img-1.png" class="img-cover" alt="">
+                    </div>
+                    <div class="content">
+                        <div class="inner-content">
+                            <div class="main-title">
+                                <h3 class="title"><a href="#">Tibetan Singing Bowl</a></h3>
+                            </div>
+                            <div class="cart-price">
+                                <span class="cart-qty">
+                                    1 X <span class="amount">$29.00</span>
+                                </span>
+                                <div class="cart-product-total">$29.00</div>
+                            </div>
+                        </div>
+                        <div class="action-btn">
+                            <span class="remove-btn">
+                                <i class="fa-solid fa-trash"></i>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="box-footer">
+            <div class="cart-sub-total">
+                <span class="text">Subtotal:</span>
+                <span class="amount">$29.00</span>
+            </div>
+            <span class="footer-text">Shipping, taxes, and discounts calculated at checkout.</span>
+            <div class="cart-cont-btns">
+                <a href="cart.html" class="cart-btn">view cart</a>
+                <a href="#" class="cart-btn">continue shopping</a>
+                <a href="checkout.html" class="cart-btn">checkout <span class="amount">- $35.00</span></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- cart-box -->
 
 
     <script src="js/jquery.min.js"></script>

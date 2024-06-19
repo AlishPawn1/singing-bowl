@@ -50,8 +50,9 @@ jQuery(function ($) {
         $('.list-cart-box').toggleClass('active');
     });
 
-    $('.overlay').click(function () {
+    $('.overlay, .overlay-cart').click(function () {
         $('.overlay').removeClass('active');
+        $('.overlay-cart').removeClass('active');
         $('.hamburger').removeClass('active');
         $('.nav-bar').removeClass('active');
         $('header .logo').removeClass('active');
@@ -100,7 +101,7 @@ jQuery(function ($) {
 
     // zoom image
 
-    const zoom = $('.single-main-slide .image');
+    const zoom = $('.product-main-slide .image');
     const s = 2;
 
     zoom.on('mousemove', function (e) {
@@ -110,33 +111,52 @@ jQuery(function ($) {
         var xc = - x / s;
         var yc = - y / s;
 
-        $('.single-main-slide .image img').css('transform', 'translate(' + xc + 'px, ' + yc + 'px) scale(1.5)');
+        $('.product-main-slide .image img').css('transform', 'translate(' + xc + 'px, ' + yc + 'px) scale(1.5)');
 
     });
 
     zoom.on('mouseleave', function () {
-        $('.single-main-slide .image img').css('transform', 'translate(0, 0) scale(1)');
+        $('.product-main-slide .image img').css('transform', 'translate(0, 0) scale(1)');
     });
 
     $(document).ready(function () {
         // Extract the price, ensuring to remove the dollar sign and any other non-numeric characters
-        const productPrice = parseFloat($('.product-price .amount').text().replace(/[^\d.-]/g, ''));
-        const $quantityInput = $('#quantity-product');
+        const productPriceText = $('.product-price .amount').text().replace(/[^\d.-]/g, '');
+        const productPrice = parseFloat(productPriceText);
+        
+        if (isNaN(productPrice)) {
+            console.error("Invalid product price:", productPriceText);
+            return;
+        }
+        
+        const $quantityInput = $('.quantity-product');
         const $totalAmountElement = $('.total-amt .amount');
+        const $cart_subtotal = $('.sub-total #subtotal');
         const $updateButton = $('.form-group.update input[type="button"]');
     
         // Ensure quantity starts as an integer
         let quantity = parseInt($quantityInput.val());
+        
+        if (isNaN(quantity) || quantity < 1) {
+            quantity = 1;
+            $quantityInput.val(quantity);
+        }
     
         // Function to update total amount
         function updateTotalAmount() {
             const totalAmount = (productPrice * quantity).toFixed(2);
             $totalAmountElement.text(`$${totalAmount}`);
+            $cart_subtotal.text(`$${totalAmount}`);
+            console.log(totalAmount);
         }
     
         // Event listener for quantity input change
         $quantityInput.on('change', function () {
             quantity = parseInt($quantityInput.val());
+            if (isNaN(quantity) || quantity < 1) {
+                quantity = 1;
+                $quantityInput.val(quantity);
+            }
             updateTotalAmount();
             $updateButton.prop('disabled', false);
         });
@@ -180,6 +200,7 @@ jQuery(function ($) {
             }
         });
     });
+    
     
     $('.change-address').click(function(){
         $(this).toggleClass('active');
@@ -479,11 +500,11 @@ jQuery(function ($) {
     });
     $('.whist-list .cart-btn').click(function () {
         $('.list-cart-box').addClass('active');
-        $('.overlay').addClass('active');
+        $('.overlay-cart').addClass('active');
     });
     $('.list-cart-box .box-head .icon').click(function () {
         $('.list-cart-box').removeClass('active');
-        $('.overlay').removeClass('active');
+        $('.overlay-cart').removeClass('active');
     });
 
     // price range
@@ -536,6 +557,55 @@ jQuery(function ($) {
             $(".create-account-pw").slideUp();
         }
     });
+
+    // payment-box
+    $(".payment_box").not(":first").hide();
+    $(".payment-option input[type='radio']").change(function() {
+        $(".payment_box").hide();
+        $(this).siblings("label").next(".payment_box").slideDown().fadeIn();
+    });
+
+    $(document).ready(function() {
+        // Initial setup to ensure .remove-filter spans are only appended when needed
+        function updateRemoveFilters() {
+            // Remove all existing .remove-filter-icon spans
+            $('.filter-radio .remove-filter-icon').remove();
+            
+            // Append .remove-filter-icon span to the .label-input element of the checked radio input
+            $('.filter-radio input[type="radio"]:checked').each(function() {
+                $(this).closest('.label-input').append('<span class="remove-filter-icon"></span>');
+            });
+        }
+        
+        $('.filter-radio input').change(function() {
+            // Remove 'select' class from all form-groups
+            $('.filter-radio .form-group').removeClass('select');
+            
+            // Add 'select' class to the parent form-group of the checked radio input
+            if ($(this).is(':checked')) {
+                $(this).closest('.form-group').addClass('select');
+            }
+            
+            // Update .remove-filter-icon spans
+            updateRemoveFilters();
+        });
+        
+        // Event listener for .remove-filter-icon click
+        $('.filter-radio').on('click', '.remove-filter-icon', function() {
+            const $formGroup = $(this).closest('.form-group');
+            $formGroup.removeClass('select');
+            $formGroup.find('input[type="radio"]').prop('checked', false);
+            
+            // Remove the .remove-filter-icon span itself
+            $(this).remove();
+        });
+        
+        // Initial update of .remove-filter-icon spans in case any radio inputs are checked on page load
+        updateRemoveFilters();
+    });
+    
+    
+    
 
 });
 

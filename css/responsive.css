@@ -227,6 +227,12 @@
     .cart-box{
         margin-top: 60px;
     }
+    .about-section .main-title .title{
+        font-size: 26px;
+    }
+    .about-card .title{
+        font-size: 18px;
+    }
 }
 
 @media screen and (max-width: 575px) {

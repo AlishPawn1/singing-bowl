@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Blogs</title>
+    <title>Blog page</title>
     <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="css/splide.min.css">
     <link rel="stylesheet" type="text/css" href="css/all.css">
@@ -59,6 +59,9 @@
                         <li>
                             <a href="contact.html" title="">contact</a>
                         </li>
+                        <li>
+                            <a href="404page.html" title="">error page</a>
+                        </li>
                     </ul>
                     <div class="header-button">
                         <div class="search">
@@ -75,7 +78,7 @@
                         </div>
                         <ul class="whist-list">
                             <li>
-                                <button class="icon">
+                                <button class="icon profile-btn">
                                     <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M9.99999 10.3849C12.7125 10.3849 14.9114 8.28401 14.9114 5.69245C14.9114 3.10088 12.7125 1 9.99999 1C7.28748 1 5.08856 3.10088 5.08856 5.69245C5.08856 8.28401 7.28748 10.3849 9.99999 10.3849Z" stroke="#fff" stroke-width="2" stroke-miterlimit="10"/>
                                         <path d="M1 18.9837L1.31714 17.3049C1.6918 15.3661 2.76549 13.6139 4.35169 12.3527C5.9379 11.0916 7.93639 10.4011 10 10.4014C12.0661 10.4018 14.0665 11.0946 15.6531 12.359C17.2396 13.6235 18.3118 15.3795 18.6829 17.3213L19 19.0001" stroke="#fff" stroke-width="2" stroke-miterlimit="10"/>
@@ -83,14 +86,14 @@
                                 </button>
                             </li>
                             <li>
-                                <button class="icon">
+                                <button class="icon whist-btn">
                                     <svg width="23" height="20" viewBox="0 0 23 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path fill-rule="evenodd" clip-rule="evenodd" d="M11.145 3.21915C9.11664 0.855351 5.72729 0.124836 3.18593 2.28936C0.644565 4.45389 0.286776 8.07284 2.28252 10.6329C3.94186 12.7613 8.96356 17.2504 10.6094 18.7034C10.7935 18.8659 10.8856 18.9472 10.993 18.9791C11.0867 19.007 11.1893 19.007 11.283 18.9791C11.3905 18.9472 11.4824 18.8659 11.6666 18.7034C13.3125 17.2504 18.3341 12.7613 19.9935 10.6329C21.9892 8.07284 21.6751 4.43112 19.09 2.28936C16.505 0.147605 13.1733 0.855351 11.145 3.21915Z" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                     </svg> 
                                 </button>
                             </li>
                             <li>
-                                <button class="icon">
+                                <button class="icon cart-btn">
                                     <svg width="22" height="20" viewBox="0 0 22 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M1.82436 17.3738C3.1427 19 5.59637 19 10.5037 19H11.2963C16.2036 19 18.6573 19 19.9756 17.3738M1.82436 17.3738C0.505999 15.7477 0.958181 13.2789 1.86256 8.34141C2.5057 4.83008 2.82727 3.07442 4.04811 2.0372M19.9756 17.3738C21.294 15.7477 20.8418 13.2789 19.9375 8.34141C19.2943 4.83008 18.9727 3.07442 17.7519 2.0372M17.7519 2.0372C16.531 1 14.7862 1 11.2963 1H10.5037C7.01388 1 5.26896 1 4.04811 2.0372" stroke="#fff" stroke-width="2"/>
                                         <path d="M7.79102 5.5C8.2436 6.81084 9.46486 7.75 10.9003 7.75C12.3358 7.75 13.5571 6.81084 14.0096 5.5" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
@@ -108,8 +111,8 @@
             </nav>
         </div>
         <div class="overlay"></div>
+        <div class="overlay-cart"></div>
     </header>
-
     <!-- header -->
 
     <!-- inner-banner -->
@@ -326,6 +329,61 @@
             </div>
         </div>
     </footer>
+
+
+    <!-- cart-box -->
+
+    <div class="list-cart-box">
+        <div class="box-head">
+            <div class="basket-box">
+                <span class="text">Your Cart</span>
+            </div>
+            <span class="icon">
+                <i class="fa-solid fa-xmark"></i>
+            </span>
+        </div>
+        <div class="box-body">
+            <div class="cart-product-list">
+                <div class="cart-product-item">
+                    <div class="image">
+                        <img src="image/category-img-1.png" class="img-cover" alt="">
+                    </div>
+                    <div class="content">
+                        <div class="inner-content">
+                            <div class="main-title">
+                                <h3 class="title"><a href="#">Tibetan Singing Bowl</a></h3>
+                            </div>
+                            <div class="cart-price">
+                                <span class="cart-qty">
+                                    1 X <span class="amount">$29.00</span>
+                                </span>
+                                <div class="cart-product-total">$29.00</div>
+                            </div>
+                        </div>
+                        <div class="action-btn">
+                            <span class="remove-btn">
+                                <i class="fa-solid fa-trash"></i>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="box-footer">
+            <div class="cart-sub-total">
+                <span class="text">Subtotal:</span>
+                <span class="amount">$29.00</span>
+            </div>
+            <span class="footer-text">Shipping, taxes, and discounts calculated at checkout.</span>
+            <div class="cart-cont-btns">
+                <a href="cart.html" class="cart-btn">view cart</a>
+                <a href="#" class="cart-btn">continue shopping</a>
+                <a href="checkout.html" class="cart-btn">checkout <span class="amount">- $35.00</span></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- cart-box -->
 
 
     <script src="js/jquery.min.js"></script>
