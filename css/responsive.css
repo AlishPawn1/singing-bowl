@@ -369,6 +369,9 @@
     .similar-post-section, .shop-list-section, .customer-review-section, .product-detail-section, .about-section, .event-section, .cart-section, .checkout-section, .search-section{
         padding-bottom: 100px;
     }
+    main section:last-child {
+        padding-bottom: 100px;
+    }
     .product-main-slide .image .sale{
         left: 10px;
         top: 10px;

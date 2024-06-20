@@ -50,9 +50,9 @@ jQuery(function ($) {
         $('.list-cart-box').toggleClass('active');
     });
 
-    $('.overlay, .overlay-cart').click(function () {
+    $('.overlay, .overlay-desktop').click(function () {
         $('.overlay').removeClass('active');
-        $('.overlay-cart').removeClass('active');
+        $('.overlay-desktop').removeClass('active');
         $('.hamburger').removeClass('active');
         $('.nav-bar').removeClass('active');
         $('header .logo').removeClass('active');
@@ -60,6 +60,7 @@ jQuery(function ($) {
         $('.filter-box-details').removeClass('active');
         $('body').removeClass('overflow-hidden');
         $('.list-cart-box').removeClass('active');
+        $('.search-box').removeClass('active');
     });
 
     $('.category-card .icon').click(function () {
@@ -67,19 +68,26 @@ jQuery(function ($) {
     });
 
     // header search
-    $('.search .icon').click(function (event) {
-        $('.search .search-box').toggleClass('active');
-        $('.search-box input').focus();
+    $('.search .icon').click(function () {
+        $('.search-box').addClass('active');
+        $('.overlay-desktop').addClass('active');
+        $('body').addClass('overflow-hidden');
+        $('.search-form-box .form-input').focus();
+    });
+    $('.popup-search .close-btn').click(function(){
+        $('.search-box').removeClass('active');
+        $('.overlay-desktop').removeClass('active');
+        $('body').removeClass('overflow-hidden');
     });
 
     $(document).click(function (event) {
-        if (!$(event.target).closest('.search .search-box').length &&
+        if (!$(event.target).closest('.search-box').length &&
             !$(event.target).closest('.search .icon').length) {
-            $('.search .search-box').removeClass('active');
+            $('.search-box').removeClass('active');
         }
     });
 
-    $('.header-button .search .search-box').click(function (event) {
+    $('.search-box').click(function (event) {
         event.stopPropagation();
     });
 
@@ -483,6 +491,82 @@ jQuery(function ($) {
         }
     });
 
+    // search-category
+    $(document).ready(function () {
+        const form = $("#search-category");
+        const dropdowns = $(".select-search-category");
+
+        // Check if Dropdowns exist
+        if (dropdowns.length > 0) {
+            dropdowns.each(function () {
+                createCustomDropdown($(this));
+            });
+        }
+
+        // Prevent form submission
+        if (form.length > 0) {
+            form.on("submit", function (e) {
+                e.preventDefault();
+            });
+        }
+
+        // Create Custom Dropdown
+        function createCustomDropdown(dropdown) {
+            const options = dropdown.find("option");
+            const customDropdown = $("<div class='search-category position-relative'></div>");
+            dropdown.after(customDropdown);
+
+            const selected = $("<div class='search-category-select'></div>");
+            selected.text(options.eq(0).text());
+            customDropdown.append(selected);
+
+            const menu = $("<div class='search-category-menu'></div>");
+            customDropdown.append(menu);
+            selected.on("click", function () {
+                menu.toggle();
+                $(this).toggleClass('open', menu.is(':visible'));
+            });
+
+            const menuInnerWrapper = $("<div class='search-category-menu-inner'></div>");
+            menu.append(menuInnerWrapper);
+
+            options.each(function (index, option) {
+                const item = $("<div class='search-category-menu-item'></div>");
+                item.data("value", $(option).val());
+                item.text($(option).text());
+                menuInnerWrapper.append(item);
+
+                item.on("click", function () {
+                    setSelected(selected, dropdown, menu, $(this));
+                });
+            });
+
+            menuInnerWrapper.find("div:first-child").addClass("is-select");
+
+            $(document).on("click", function (e) {
+                if (!$(e.target).closest(".search-category").length && menu.is(":visible")) {
+                    selected.removeClass('open');
+                }
+            });
+
+            dropdown.hide();
+        }
+
+        function setSelected(selected, dropdown, menu, item) {
+            const value = item.data("value");
+            const label = item.text();
+
+            selected.text(label);
+            dropdown.val(value);
+
+            menu.hide();
+            selected.removeClass('open');
+            menu.find("input").val("");
+            menu.find(".search-category-menu-inner div").show();
+            item.addClass("is-select").siblings().removeClass("is-select");
+        }
+    });
+
     $('.filter-box svg').click(function () {
         $('.filter-box').addClass('active');
         $('.filter-box-details').addClass('active');
@@ -495,53 +579,46 @@ jQuery(function ($) {
     });
     $('.whist-list .cart-btn').click(function () {
         $('.list-cart-box').addClass('active');
-        $('.overlay-cart').addClass('active');
+        $('.overlay-desktop').addClass('active');
     });
     $('.list-cart-box .box-head .icon').click(function () {
         $('.list-cart-box').removeClass('active');
-        $('.overlay-cart').removeClass('active');
+        $('.overlay-desktop').removeClass('active');
     });
 
     // price range
+    const rangeInput = $(".range-input input");
+    const progress = $(".slider .progress");
+    const fromLabel = $(".filter-price-label .from");
+    const toLabel = $(".filter-price-label .to");
+    let priceGap = 1;
 
-    $(document).ready(function () {
-        const rangeInput = $(".range-input input");
-        const progress = $(".slider .progress");
-        const fromLabel = $(".filter-price-label .from");
-        const toLabel = $(".filter-price-label .to");
-        let priceGap = 1;
+    function updateLabels() {
+        const minVal = parseInt(rangeInput.eq(0).val());
+        const maxVal = parseInt(rangeInput.eq(1).val());
+        fromLabel.text(`$${minVal}`);
+        toLabel.text(`$${maxVal}`);
+        progress.css("left", (minVal / rangeInput.eq(0).attr("max")) * 100 + "%");
+        progress.css("right", 100 - (maxVal / rangeInput.eq(1).attr("max")) * 100 + "%");
+    }
 
-        function updateLabels() {
-            const minVal = parseInt(rangeInput.eq(0).val());
-            const maxVal = parseInt(rangeInput.eq(1).val());
-            fromLabel.text(`$${minVal}`);
-            toLabel.text(`$${maxVal}`);
-            progress.css("left", (minVal / rangeInput.eq(0).attr("max")) * 100 + "%");
-            progress.css("right", 100 - (maxVal / rangeInput.eq(1).attr("max")) * 100 + "%");
-        }
+    rangeInput.on("input", function () {
+        let minVal = parseInt(rangeInput.eq(0).val());
+        let maxVal = parseInt(rangeInput.eq(1).val());
 
-        rangeInput.on("input", function () {
-            let minVal = parseInt(rangeInput.eq(0).val());
-            let maxVal = parseInt(rangeInput.eq(1).val());
-
-            if (maxVal - minVal < priceGap) {
-                if ($(this).hasClass("range-min")) {
-                    rangeInput.eq(0).val(maxVal - priceGap);
-                } else {
-                    rangeInput.eq(1).val(minVal + priceGap);
-                }
+        if (maxVal - minVal < priceGap) {
+            if ($(this).hasClass("range-min")) {
+                rangeInput.eq(0).val(maxVal - priceGap);
             } else {
-                updateLabels();
+                rangeInput.eq(1).val(minVal + priceGap);
             }
-        });
-
-        updateLabels();
+        } else {
+            updateLabels();
+        }
     });
 
-    $('.filter-item .title .icon').click(function () {
-        $(this).closest('.filter-item').find('.filter-list').slideToggle();
-        $(this).toggleClass('active');
-    });
+    updateLabels();
+    // price range
 
     // create account
     $(".create-account-pw").hide();
@@ -560,44 +637,35 @@ jQuery(function ($) {
         $(this).siblings("label").next(".payment_box").slideDown().fadeIn();
     });
 
-    $(document).ready(function() {
-        // Initial setup to ensure .remove-filter spans are only appended when needed
-        function updateRemoveFilters() {
-            // Remove all existing .remove-filter-icon spans
-            $('.filter-radio .remove-filter-icon').remove();
-            
-            // Append .remove-filter-icon span to the .label-input element of the checked radio input
-            $('.filter-radio input[type="radio"]:checked').each(function() {
-                $(this).closest('.label-input').append('<span class="remove-filter-icon"></span>');
-            });
+
+    // shop filter
+    $('.filter-item .title .icon').click(function () {
+        $(this).closest('.filter-item').find('.filter-list').slideToggle();
+        $(this).toggleClass('active');
+    });
+
+    function updateRemoveFilters() {
+        $('.filter-radio .remove-filter-icon').remove();
+        $('.filter-radio input[type="radio"]:checked').each(function() {
+            $(this).closest('.label-input').append('<span class="remove-filter-icon"></span>');
+        });
+    }
+    
+    $('.filter-radio input').change(function() {
+        $('.filter-radio .form-group').removeClass('select');
+        if ($(this).is(':checked')) {
+            $(this).closest('.form-group').addClass('select');
         }
-        
-        $('.filter-radio input').change(function() {
-            // Remove 'select' class from all form-groups
-            $('.filter-radio .form-group').removeClass('select');
-            
-            // Add 'select' class to the parent form-group of the checked radio input
-            if ($(this).is(':checked')) {
-                $(this).closest('.form-group').addClass('select');
-            }
-            
-            // Update .remove-filter-icon spans
-            updateRemoveFilters();
-        });
-        
-        // Event listener for .remove-filter-icon click
-        $('.filter-radio').on('click', '.remove-filter-icon', function() {
-            const $formGroup = $(this).closest('.form-group');
-            $formGroup.removeClass('select');
-            $formGroup.find('input[type="radio"]').prop('checked', false);
-            
-            // Remove the .remove-filter-icon span itself
-            $(this).remove();
-        });
-        
-        // Initial update of .remove-filter-icon spans in case any radio inputs are checked on page load
         updateRemoveFilters();
     });
+    
+    $('.filter-radio').on('click', '.remove-filter-icon', function() {
+        const $formGroup = $(this).closest('.form-group');
+        $formGroup.removeClass('select');
+        $formGroup.find('input[type="radio"]').prop('checked', false);
+        $(this).remove();
+    });
+    updateRemoveFilters();
     
     
     
