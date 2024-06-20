@@ -368,14 +368,15 @@ header .logo a{
     background-color: transparent;
     border: none;
 }
+.search-box .container{
+    max-width: 800px;
+}
 .search-form-box{
     display: flex;
     align-items: center;
     /* justify-content: center; */
     border: 2px solid #EAEBED;
     border-radius: 5px;
-    max-width: 600px;
-    margin: 0 auto;
 }
 
 .search-form-box .form-group{
@@ -505,6 +506,36 @@ header .logo a{
 .popup-search .close-btn:hover::after{
     transform: rotate(45deg);
 }
+.popular-item{
+    display: flex;
+}
+.popular-item .title{
+    margin-bottom: 0;
+}
+.popular-item .title a{
+    color: var(--text-color);
+    font-weight: 600;
+    font-size: 14px;
+}
+.popular-item .amount{
+    font-size: 13px;
+    font-weight: 600;
+}
+.popular-item .image{
+    width: 40%;
+    flex: 0 0 40%;
+}
+.popular-product-list{
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #E1E2E3;
+}
+.popular-product-list .main-title .title{
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
 .header-button button, .search button{
     border: none;
     background-color: transparent;

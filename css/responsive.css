@@ -106,7 +106,7 @@
         transition: var(--default-transition);
         overflow: auto;
         z-index: 9;
-        width: 300px;
+        width: 500px;
         height: 100vh;
         align-items: unset;
         justify-content: unset;
@@ -130,10 +130,7 @@
         position: relative;
     }
     .header-button .search button{
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        right: 10px;
+        display: none;
     }
     .header-button .search .search-box{
         position: static;
@@ -249,6 +246,13 @@
     }
     .contact-list{
         margin-top: 0 !important;
+    }
+    .search-box{
+        position: static;
+        opacity: 1;
+        visibility: visible;
+        transform: unset;
+        padding: 0;
     }
 }
 
