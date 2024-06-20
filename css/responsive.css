@@ -247,6 +247,9 @@
     .about-card .title{
         font-size: 18px;
     }
+    .contact-list{
+        margin-top: 0 !important;
+    }
 }
 
 @media screen and (max-width: 575px) {
@@ -328,7 +331,7 @@
         height: 70px;
     }
     .touch-box input[type="email"]{
-        max-width: 216px;
+        max-width: unset;
     }
     .footer-item{
         margin-top: 0;
@@ -440,6 +443,21 @@
         gap: 10px;
         justify-content: unset;
     }
+    .contact-banner .main-title{
+        width: 100%;
+    }
+    .contact-banner .main-title .sub-title{
+        font-size: 24px;
+    }
+	.contact-banner, .about-section, .product-detail-section, .checkout-section{
+		padding-top: 80px;
+	}
+    .subscribe-form {
+        flex-direction: column;
+        max-width: 100%;
+        gap: 10px;
+    }
+    .touch-box input {
+        border-radius: 8px !important;
+    }
 }
-
-@media screen and (max-width: 420px) {}
