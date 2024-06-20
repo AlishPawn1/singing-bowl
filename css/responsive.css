@@ -162,9 +162,6 @@
     .category-item .big-image{
         height: 380px;
     }
-    .category-item.right > .row{
-        flex-direction: column-reverse;
-    }
     .footer-top .col-lg-8{
         padding-left: 24px;
     }
