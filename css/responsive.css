@@ -101,7 +101,7 @@
         gap: 30px;
         right: -100%;
         top: 0;
-        padding-top: 72px;
+        padding-top: 90px;
         background-color: #fff;
         transition: var(--default-transition);
         overflow: auto;
@@ -121,10 +121,12 @@
     .primary-menu {
         flex-direction: column;
         gap: 0;
+        order: 2;
     }
     .header-button{
         flex-direction: column;
         padding: 0 20px;
+        order: 2;
     }
     .header-button .search{
         position: relative;
@@ -138,11 +140,15 @@
         visibility: visible;
     }
     .search-box input{
-        border: 1px solid #202020;
         width: 100%;
         padding-right: 36px;
     }
-
+    .search-box button{
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 0px;
+    }
     .header-button svg path{
         fill: #202020;
         stroke: #202020;
@@ -253,6 +259,10 @@
         visibility: visible;
         transform: unset;
         padding: 0;
+        order: 1;
+    }
+    .popup-search .close-btn, .popular-product-list{
+        display: none;
     }
 }
 

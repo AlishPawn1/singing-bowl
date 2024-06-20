@@ -197,6 +197,9 @@ ul.contact-list,
     max-width: 1000px;
     margin: 0 auto;
 }
+.form-group{
+    position: relative;
+}
 .form-group label{
     display: inline-block;
     text-transform: capitalize;
@@ -367,9 +370,10 @@ header .logo a{
 .search-box button{
     background-color: transparent;
     border: none;
+    padding-right: 10px;
 }
 .search-box .container{
-    max-width: 800px;
+    max-width: 850px;
 }
 .search-form-box{
     display: flex;
@@ -508,6 +512,7 @@ header .logo a{
 }
 .popular-item{
     display: flex;
+    gap: 10px;
 }
 .popular-item .title{
     margin-bottom: 0;
